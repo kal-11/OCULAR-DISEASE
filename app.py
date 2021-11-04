@@ -45,7 +45,9 @@ def get_output():
 
     return render_template("index.html", prediction=p, img_path=img_path)
 
+import os
+from pml import app 
+port = int(os.environ.get('PORT'))
 
 if __name__ == '__main__':
-    # app.debug = True
-    app.run(debug=True, port=33507)
+    app.run(host='0.0.0.0', port=port)
